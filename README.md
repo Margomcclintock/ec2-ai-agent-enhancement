@@ -110,20 +110,32 @@ Create new AI Agent with the following configuration:
 
 - **Name:** `EC2 Remediation Assistant`  
 - **Description:** `Helps DevOps engineers restart EC2 instances from incident tickets by reading incident descriptions and executing remediation scripts with human approval`
+<img width="950" height="290" alt="image" src="https://github.com/user-attachments/assets/31ee0c84-c478-4bd9-83d0-7873c3793029" />
 
 **Instruct the AI agent:**
 
 - **AI agent role:** `EC2 remediation specialist for DevOps operations`  
 - **Instructions:** Configure agent to read incident descriptions, identify EC2 instance IDs, request human approval, and execute remediation using your existing API integration
 
+<img width="727" height="175" alt="image" src="https://github.com/user-attachments/assets/08186ce1-36c2-4d6a-ad90-38ce4f77578c" />
+
 ### Step 2: Script Tool Implementation
 
 **Add Script Tool to your AI Agent:**
 
 - **Tool Configuration:** Create script tool using your existing RemediationHelper logic adapted for conversational interface  
-- **Input Schema:** Single input for `instance_id` with LLM-friendly description  
-- **Execution Mode:** Supervised (requires human approval)  
+- **Input Schema:** Single input for `instance_id` with LLM-friendly description
+
+  <img width="943" height="355" alt="image" src="https://github.com/user-attachments/assets/61bae3bf-3ced-4fc0-8267-20e00eae842f" />
+
+- **Execution Mode:** Supervised (requires human approval)
+<img width="928" height="314" alt="image" src="https://github.com/user-attachments/assets/b5ebb1cb-1428-4cc9-90c9-7f91ea71c190" />
+
+
+  
 - **Integration:** Adapts your existing RemediationHelper logic for natural language interaction
+  
+
 
 **Key Adaptation:** The Script Tool translates between natural language input (instance IDs from conversation) and your existing database structure (sys\_ids), while maintaining identical API calls and logging to your existing RemediationHelper.
 
@@ -137,6 +149,7 @@ Create new AI Agent with the following configuration:
 2. **Go to Tools tab:** Add your script tool for EC2 remediation  
 3. **Configure tool parameters:** Ensure the tool accepts instance\_id input and provides human-readable responses  
 4. **Test tool integration:** Verify the agent can successfully call your script tool
+<img width="959" height="404" alt="image" src="https://github.com/user-attachments/assets/8a35af2f-702e-4ebc-8635-11d2d794dcb5" />
 
 **Agent Tool Relationship:** The system automatically creates a many-to-many relationship record in `sn_aia_agent_tool_m2m` when you add tools to your agent. This record is essential for your update set.
 
@@ -146,10 +159,18 @@ Create new AI Agent with the following configuration:
 
 Test these scenarios in AI Agent Studio:
 
-1. **Direct Instance ID Request:** "Restart instance i-09ae69f1cb71f622e"  
-2. **Incident-Based Request:** "Help me solve incident INC0001234"  
-3. **Invalid Input Handling:** Test with malformed instance IDs  
-4. **Permission Flow:** Verify human approval requirements
+1. **Direct Instance ID Request:** "Restart instance i-09ae69f1cb71f622e"
+   <img width="932" height="401" alt="image" src="https://github.com/user-attachments/assets/a88cac96-0d40-4607-85bb-48fbe33c5eda" />
+<img width="956" height="388" alt="image" src="https://github.com/user-attachments/assets/41f07200-2b33-44a3-a416-c38a76c8edc6" />
+
+2. **Incident-Based Request:** "Help me solve incident INC0001234"
+  <img width="283" height="361" alt="image" src="https://github.com/user-attachments/assets/22bdf5c8-e260-4176-8566-383172872172" />
+
+
+3. **Invalid Input Handling:** Test with malformed instance IDs
+   <img width="958" height="361" alt="image" src="https://github.com/user-attachments/assets/e73cebf4-c49d-46df-a6e9-5c9f5437cfbc" />
+ 
+6. **Permission Flow:** Verify human approval requirements
 
 **Integration Verification:**
 
