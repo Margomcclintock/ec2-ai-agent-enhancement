@@ -18,21 +18,6 @@
 
 **Verification:** Before proceeding, ensure your manual system can successfully restart EC2 instances.
 
-## GitHub Repository Setup
-
-**Step 1:** Create your GitHub repository with the name `ec2-ai-agent-enhancement`
-
-**Step 2:** Create your enhanced system architecture diagram using Draw.io and save as `Diagram.png`
-
-**Step 3:** Set up your repository structure with the following naming convention:
-
-```
-/ec2-ai-agent-enhancement
-├── README.md
-├── ec2-ai-agent-enhancement.xml
-├── Diagram.png
-```
-
 ## System Resources and Context
 
 **Netflix's Enhanced Integration:** Your existing AWS Integration Server connection and manual remediation system remain unchanged. The AI Agent enhancement adds an intelligent conversational layer that utilizes your proven RemediationHelper logic through natural language interaction.
