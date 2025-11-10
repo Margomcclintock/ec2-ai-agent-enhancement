@@ -169,7 +169,17 @@ option2: <img width="951" height="338" alt="image" src="https://github.com/user-
 **Integration Verification:**
 
 - Confirm AI Agent creates entries in same Remediation Log table as manual system
- <img width="958" height="199" alt="image" src="https://github.com/user-attachments/assets/b0d10bf5-6ee7-4bf7-b4d1-4b0bd85e3ed6" />
+ <img width="959" height="193" alt="image" src="https://github.com/user-attachments/assets/742ee867-1dea-41b1-9bb2-7d2578d41710" />
+
+All match so the integration consistency is confirmed.
+| Field                | Manual                        | AI Agent           | Match? |
+| -------------------- | ----------------------------- | ------------------ | ------ |
+| **EC2 Instance**     | same sys_id                   | same sys_id        | ✅      |
+| **Request Payload**  | identical JSON                | identical JSON     | ✅      |
+| **HTTP Status Code** | 200                           | 200                | ✅      |
+| **Response Time**    | within similar range          | similar range      | ✅      |
+| **Success**          | true                          | true               | ✅      |
+| **Timestamp**        | slightly different (run time) | slightly different | ✅      |
 
 ---
 | Field                             | What It Shows                           | What It Means                                                                                                                                            |
@@ -249,6 +259,7 @@ F --> G[Success/Failure Response]
 | **Maintainability** | Reuses RemediationHelper logic          | Low technical debt                   |
 | **User Experience** | Conversational approval flow            | Improved engagement                  |
 
+
 ---
 #### ** Overall Conclusion**F. Overall Conclusion
 
@@ -284,6 +295,11 @@ The AI Agent remediation is now recommended for peak load hours and incident tri
 **Conversation History:** Review agent conversation logs in AI Agent Studio
 
 **Integration Consistency:** Confirm both manual and AI approaches create identical log entries in Remediation Log table
+
+Both the manual WL2 UI Action and the AI Agent Script Tool write to the same x_wl2_remediation_log table.
+Side-by-side comparison of recent entries confirms identical fields — including EC2 Instance reference, Request Payload structure, HTTP status codes, and success indicators.
+Both approaches also trigger the same AWS Integration Server connection (AWS_Remediation_Alias), verified through REST Message Logs.
+This confirms architectural consistency and ensures unified audit trails regardless of remediation path.
 
 ## Deliverables
 
