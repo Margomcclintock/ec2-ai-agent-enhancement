@@ -171,6 +171,8 @@ option2: <img width="951" height="338" alt="image" src="https://github.com/user-
 - Confirm AI Agent creates entries in same Remediation Log table as manual system
  <img width="959" height="193" alt="image" src="https://github.com/user-attachments/assets/742ee867-1dea-41b1-9bb2-7d2578d41710" />
 
+Integration Consistency Validation: Manual and AI Agent-generated remediation logs with identical payloads and structure.
+
 All match so the integration consistency is confirmed.
 | Field                | Manual                        | AI Agent           | Match? |
 | -------------------- | ----------------------------- | ------------------ | ------ |
