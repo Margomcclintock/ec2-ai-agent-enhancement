@@ -176,7 +176,7 @@ All match so the integration consistency is confirmed.
 | -------------------- | ----------------------------- | ------------------ | ------ |
 | **EC2 Instance**     | same sys_id                   | same sys_id        | ✅      |
 | **Request Payload**  | identical JSON                | identical JSON     | ✅      |
-| **HTTP Status Code** | 200                           | 200                | ✅      |
+| **HTTP Status Code** | 201                               | 201                | ✅      |
 | **Response Time**    | within similar range          | similar range      | ✅      |
 | **Success**          | true                          | true               | ✅      |
 | **Timestamp**        | slightly different (run time) | slightly different | ✅      |
