@@ -111,7 +111,8 @@ Create new AI Agent with the following configuration:
 - **Tool Configuration:** Create script tool using your existing RemediationHelper logic adapted for conversational interface  
 - **Input Schema:** Single input for `instance_id` with LLM-friendly description
 
-  <img width="943" height="355" alt="image" src="https://github.com/user-attachments/assets/61bae3bf-3ced-4fc0-8267-20e00eae842f" />
+<img width="935" height="409" alt="image" src="https://github.com/user-attachments/assets/0a1f310b-a7c4-4ae2-b847-9bc8bc3a52b2" />
+
 
 - **Execution Mode:** Supervised (requires human approval)
 <img width="928" height="314" alt="image" src="https://github.com/user-attachments/assets/b5ebb1cb-1428-4cc9-90c9-7f91ea71c190" />
@@ -134,7 +135,8 @@ Create new AI Agent with the following configuration:
 2. **Go to Tools tab:** Add your script tool for EC2 remediation  
 3. **Configure tool parameters:** Ensure the tool accepts instance\_id input and provides human-readable responses  
 4. **Test tool integration:** Verify the agent can successfully call your script tool
-<img width="959" height="404" alt="image" src="https://github.com/user-attachments/assets/8a35af2f-702e-4ebc-8635-11d2d794dcb5" />
+<img width="839" height="417" alt="image" src="https://github.com/user-attachments/assets/4c43a3b9-6ca1-418e-a46e-59a0de66f24f" />
+
 
 **Agent Tool Relationship:** The system automatically creates a many-to-many relationship record in `sn_aia_agent_tool_m2m` when you add tools to your agent. This record is essential for your update set.
 
