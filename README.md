@@ -266,8 +266,10 @@ The AI Agent remediation is now recommended for peak load hours and incident tri
    - Agent reads incident, identifies instance ID, requests approval  
    - Engineer approves, agent executes remediation  
    - Same logging and API integration as manual system
+<img width="944" height="341" alt="image" src="https://github.com/user-attachments/assets/ff71009b-fe97-46ec-8a42-97dd0459c0a6" />
+   <img width="959" height="365" alt="image" src="https://github.com/user-attachments/assets/1e803225-7450-46c8-a690-0afaa2c35a41" />
+<img width="953" height="310" alt="image" src="https://github.com/user-attachments/assets/79183e57-5610-4a6b-926c-9ec300bb2fb0" />
 
-   
 
 2. **Comparative Testing:**  
      
