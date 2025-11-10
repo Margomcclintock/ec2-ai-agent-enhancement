@@ -148,12 +148,16 @@ Test these scenarios in AI Agent Studio:
    <img width="932" height="401" alt="image" src="https://github.com/user-attachments/assets/a88cac96-0d40-4607-85bb-48fbe33c5eda" />
 <img width="956" height="388" alt="image" src="https://github.com/user-attachments/assets/41f07200-2b33-44a3-a416-c38a76c8edc6" />
 
-2. **Incident-Based Request:** "Help me solve incident INC0001234"
-  <img width="283" height="361" alt="image" src="https://github.com/user-attachments/assets/22bdf5c8-e260-4176-8566-383172872172" />
+2. **Incident-Based Request:** "Help me solve incident INC0010021"
+<img width="944" height="341" alt="image" src="https://github.com/user-attachments/assets/ff71009b-fe97-46ec-8a42-97dd0459c0a6" />
+
 
 
 3. **Invalid Input Handling:** Test with malformed instance IDs
-   <img width="958" height="361" alt="image" src="https://github.com/user-attachments/assets/e73cebf4-c49d-46df-a6e9-5c9f5437cfbc" />
+<img width="959" height="365" alt="image" src="https://github.com/user-attachments/assets/1e803225-7450-46c8-a690-0afaa2c35a41" />
+<img width="953" height="310" alt="image" src="https://github.com/user-attachments/assets/79183e57-5610-4a6b-926c-9ec300bb2fb0" />
+
+
  
 6. **Permission Flow:** Verify human approval requirements
 
@@ -181,7 +185,7 @@ Compare your manual system's `EC2RemediationHelper.js` with the AI Agent's scrip
 
 1. **AI Agent Conversation Flow:**  
      
-   - DevOps engineer: "Help me with incident INC0001234"  
+   - DevOps engineer: "Help me with incident INC0010021"  
    - Agent reads incident, identifies instance ID, requests approval  
    - Engineer approves, agent executes remediation  
    - Same logging and API integration as manual system
@@ -315,3 +319,12 @@ Use Draw.io and save as `Diagram.png`
 - Both manual and AI Agent approaches must create identical remediation log entries  
 - Script comparison analysis must demonstrate understanding of architectural differences  
 - Documentation must clearly explain when to use manual vs conversational remediation approaches
+
+
+Additional Testing Verificiation :
+<img width="959" height="365" alt="image" src="https://github.com/user-attachments/assets/7cd752c8-b6bb-4973-8445-f2becae0ec1a" />
+<img width="943" height="365" alt="image" src="https://github.com/user-attachments/assets/b6464f9d-ac61-4284-8867-319e1e92cd38" />
+<img width="951" height="365" alt="image" src="https://github.com/user-attachments/assets/966a1903-6047-4e77-94f2-c06c78fc4fa2" />
+
+
+
