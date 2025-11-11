@@ -22,13 +22,24 @@ ___
 This project builds on the [EC2 Remediation System](https://github.com/Margomcclintock/ec2-remediation-system).
 
 
-**Required:** Completed WL2 Manual EC2 Remediation System with all components functional:
 
-- EC2 Monitoring and Remediation scoped application  
-- EC2 Instance tables with working data  
-- AWS Integration Server connection and credentials
+Related Repository
 
-**Verification:** Before proceeding, ensure your manual system can successfully restart EC2 instances.
+This project extends [EC2 Remediation System](https://github.com/Margomcclintock/ec2-remediation-system) to introduce AI-driven enhancements for Netflix’s EC2 incident management.
+
+To ensure compatibility, make sure the WL2 Manual EC2 Remediation System is fully configured and functional, including:
+
+** -The EC2 Monitoring and Remediation scoped application**
+
+** -EC2 Instance tables populated with valid data**
+
+** -A working AWS Integration Server connection and credentials**
+
+
+
+
+
+**Verification:** Before I proceeded,it was necessary for the manual system to successfully restart EC2 instances.
 
 ## System Resources and Context
 
