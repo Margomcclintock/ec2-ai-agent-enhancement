@@ -10,7 +10,7 @@
 
 ---
 ## Architecture Diagram
-<img width="1109" height="770" alt="image" src="https://github.com/user-attachments/assets/4f964c02-966c-4256-9b52-10f9fd6dc451" />
+<img width="1126" height="763" alt="image" src="https://github.com/user-attachments/assets/94725bcc-de61-4f14-988b-6fb3a1937c6a" />
 
 
 ___
