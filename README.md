@@ -8,6 +8,11 @@
 
 **The Business Problem:** Netflix's DevOps team needs an intelligent conversational interface that can identify EC2 instance IDs from natural language, provide human-in-the-loop remediation approval, and execute the same proven remediation scripts through AI-driven conversation rather than manual UI navigation.
 
+---
+## Architecture Diagram
+<img width="1111" height="771" alt="image" src="https://github.com/user-attachments/assets/86d3cce7-87cf-4f9e-9600-127e8dcbde78" />
+
+___
 ## Prerequisites
 
 **Required:** Completed WL2 Manual EC2 Remediation System with all components functional:
