@@ -19,12 +19,6 @@ ___
 ## Prerequisites
 
 ### Related Repository
-This project builds on the [EC2 Remediation System](https://github.com/Margomcclintock/ec2-remediation-system).
-
-
-
-Related Repository
-
 This project extends [EC2 Remediation System](https://github.com/Margomcclintock/ec2-remediation-system) to introduce AI-driven enhancements for Netflix’s EC2 incident management.
 
 To ensure compatibility, make sure the WL2 Manual EC2 Remediation System is fully configured and functional, including:
