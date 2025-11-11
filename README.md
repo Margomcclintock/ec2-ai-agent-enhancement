@@ -10,13 +10,17 @@
 
 ---
 ## Architecture Diagram
-<img width="1126" height="763" alt="image" src="https://github.com/user-attachments/assets/94725bcc-de61-4f14-988b-6fb3a1937c6a" />
+
+
 
 
 ___
 ## Prerequisites
 
 **Required:** Completed WL2 Manual EC2 Remediation System with all components functional:
+### Related Repository
+This project builds on the [EC2 Remediation System](https://github.com/Margomcclintock/ec2-remediation-system).
+
 
 - EC2 Monitoring and Remediation scoped application  
 - EC2 Instance tables with working data  
