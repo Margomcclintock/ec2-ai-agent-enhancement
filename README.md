@@ -17,10 +17,11 @@
 ___
 ## Prerequisites
 
-**Required:** Completed WL2 Manual EC2 Remediation System with all components functional:
 ### Related Repository
 This project builds on the [EC2 Remediation System](https://github.com/Margomcclintock/ec2-remediation-system).
 
+
+**Required:** Completed WL2 Manual EC2 Remediation System with all components functional:
 
 - EC2 Monitoring and Remediation scoped application  
 - EC2 Instance tables with working data  
