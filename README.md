@@ -21,20 +21,18 @@ ___
 ### Related Repository
 This project extends [EC2 Remediation System](https://github.com/Margomcclintock/ec2-remediation-system) to introduce AI-driven enhancements for Netflix’s EC2 incident management.
 
-To ensure compatibility, make sure the WL2 Manual EC2 Remediation System is fully configured and functional, including:
+To ensure compatibility, the WL2 Manual EC2 Remediation System needs to be fully configured and functional, including:
 
 -  The EC2 Monitoring and Remediation-scoped application
 -  EC2 Instance tables populated with valid data
 -  A working AWS Integration Server connection and credentials
-  -The EC2 Monitoring and Remediation-scoped application**
-
-
+  -The EC2 Monitoring and Remediation-scoped application
 
 **Verification:** Before I proceeded,it was necessary for the manual system to successfully restart EC2 instances.
 
 ## System Resources and Context
 
-**Netflix's Enhanced Integration:** Your existing AWS Integration Server connection and manual remediation system remain unchanged. The AI Agent enhancement adds an intelligent conversational layer that utilizes your proven RemediationHelper logic through natural language interaction.
+**Netflix's Enhanced Integration:** The existing AWS Integration Server connection and manual remediation system remain unchanged. The AI Agent enhancement adds an intelligent conversational layer that utilizes the prior RemediationHelper logic through natural language interaction.
 
 **What You Receive:**
 
