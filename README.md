@@ -23,13 +23,10 @@ This project extends [EC2 Remediation System](https://github.com/Margomcclintock
 
 To ensure compatibility, make sure the WL2 Manual EC2 Remediation System is fully configured and functional, including:
 
- -The EC2 Monitoring and Remediation scoped application
-
--EC2 Instance tables populated with valid data
-
--A working AWS Integration Server connection and credentials**
-
-
+-  The EC2 Monitoring and Remediation-scoped application
+-  EC2 Instance tables populated with valid data
+-  A working AWS Integration Server connection and credentials
+  -The EC2 Monitoring and Remediation-scoped application**
 
 
 
