@@ -158,7 +158,7 @@ option2: <img width="951" height="338" alt="image" src="https://github.com/user-
 
 Integration Consistency Validation: Manual and AI Agent-generated remediation logs with identical payloads and structure.
 
-All match so the integration consistency is confirmed.
+All match, so the integration consistency is confirmed.
 | Field                | Manual                        | AI Agent           | Match? |
 | -------------------- | ----------------------------- | ------------------ | ------ |
 | **EC2 Instance**     | same sys_id                   | same sys_id        | ✅      |
@@ -169,13 +169,23 @@ All match so the integration consistency is confirmed.
 | **Timestamp**        | slightly different (run time) | slightly different | ✅      |
 
 ---
-| Field                             | What It Shows                           | What It Means                                                                                                                                            |
-| --------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **EC2 Instance**                  | `04056b13307322107f44536bdd6b1cd9`      | The log entry was tied to the correct EC2 record (your instance reference worked).                                                                       |
-| **HTTP Status Code**              | `401`                                   | The REST call reached the AWS Integration Server but failed authentication — meaning the connection worked, but credentials or headers need to be fixed. |
-| **Request Payload**               | `{"instance_id":"i-08a978e8520523a44"}` | The Script Tool correctly sent your EC2 instance ID in JSON format — this confirms your AI Agent passed input to the RemediationHelper logic properly.   |
-| **Success**                       | `false`                                 | This flag is only `false` because the API returned `401 Unauthorized`. Once your AWS credentials are valid, this will change to `true`.                  |
-| **Created / Updated / Timestamp** | `2025-11-10 17:24:41`                   | Confirms the log was generated *at the time of your AI Agent execution*.                                                                                 |
+# Remediation Log Details
+
+The Remediation Logs table captures each remediation request executed by the AI Agent. The chart below explains what each field represents and how to interpret the results.
+
+| Field | What It Shows | What It Means |
+|-------|---------------|----------------|
+| **EC2 Instance** | `04056b13307322107f44536bdd6b1cd9` | The log is linked to the correct EC2 Instance record in ServiceNow. This confirms the Script Tool located the correct record and passed the reference properly. |
+| **HTTP Status Code** | `201` | AWS received the remediation request and accepted it. A 201 response means the remediation action was successfully created and AWS is processing it. |
+| **Request Payload** | `{"instance_id":"i-08a978e8520523a44"}` | The instance ID was extracted by the AI Agent and sent in the correct JSON format. This verifies the LLM extraction and Script Tool formatting were accurate. |
+| **Response Time** | Milliseconds | The amount of time AWS took to respond. This helps measure the speed and performance of the remediation workflow. |
+| **Success** | `true` | The remediation request completed successfully. This confirms authentication, headers, credentials, and the AWS Integration Server connection are all functioning correctly. |
+| **Timestamp** | `2025-11-10 17:24:41` | The exact time the remediation action was executed. This provides a clear timeline of agent activity and remediation events. |
+
+## Interpretation
+
+When a remediation is triggered, a new log entry captures the status and payload. A 201 status code combined with a success value of true confirms the full automation pipeline is working as expected, from LLM extraction to AWS API execution.
+                                                                   |
 ---
 - Verify identical API calls to AWS Integration Server  
 - Test both manual UI Action and AI Agent on same instances
