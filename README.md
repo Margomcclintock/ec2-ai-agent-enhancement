@@ -48,8 +48,8 @@ To ensure compatibility, the WL2 Manual EC2 Remediation System needs to be fully
 
 1. **Build AI Agent Infrastructure**  
      
-   - Create AI Agents with proper roles and instructions for EC2 remediation  
-   - Implement Script Tool that adapts existing RemediationHelper logic for conversational use  
+   - Created AI Agents with proper roles and instructions for EC2 remediation  
+   - Implemented Script Tool that adapted existing RemediationHelper logic for conversational use  
    - Configured supervised execution with human approval requirements
 
    
@@ -64,10 +64,9 @@ To ensure compatibility, the WL2 Manual EC2 Remediation System needs to be fully
 
 3. **System Integration and Analysis**  
      
-   - I compared manual vs AI Agent approaches for efficiency and usability  
-   - I analyzed script differences and architectural adaptations  
-   - I documented
-   -  when each approach is most appropriate for DevOps workflows
+   - Compared manual vs AI Agent approaches for efficiency and usability  
+   - Analyzed script differences and architectural adaptations  
+   - Documented when each approach is most appropriate for DevOps workflows
 
 ## Sequential Configuration Steps
 
@@ -86,7 +85,7 @@ Created a new AI Agent with the following configuration:
 **Instruct the AI agent:**
 
 - **AI agent role:** `EC2 remediation specialist for DevOps operations`  
-- **Instructions:** Configure agent to read incident descriptions, identify EC2 instance IDs, request human approval, and execute remediation using your existing API integration
+- **Instructions:** Configure the agent to read incident descriptions, identify EC2 instance IDs, request human approval, and execute remediation using your existing API integration
 
 <img width="727" height="175" alt="image" src="https://github.com/user-attachments/assets/08186ce1-36c2-4d6a-ad90-38ce4f77578c" />
 
@@ -94,7 +93,7 @@ Created a new AI Agent with the following configuration:
 
 **Add Script Tool to your AI Agent:**
 
-- **Tool Configuration:** Created a script tool using your existing RemediationHelper logic adapted for a conversational interface  
+- **Tool Configuration:** Created a script tool using the existing RemediationHelper logic adapted for a conversational interface  
 - **Input Schema:** Single input for `instance_id` with LLM-friendly description
 
 <img width="935" height="409" alt="image" src="https://github.com/user-attachments/assets/0a1f310b-a7c4-4ae2-b847-9bc8bc3a52b2" />
@@ -105,7 +104,7 @@ Created a new AI Agent with the following configuration:
 
 
   
-- **Integration:** Adapts your existing RemediationHelper logic for natural language interaction
+- **Integration:** Adapts the existing RemediationHelper logic for natural language interaction
   
 
 
