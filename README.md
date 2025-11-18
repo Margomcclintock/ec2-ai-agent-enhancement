@@ -159,14 +159,14 @@ The Remediation Logs table captures each remediation request executed by the AI 
 | **HTTP Status Code** | `201` | AWS received the remediation request and accepted it. A 201 response means the remediation action was successfully created and AWS is processing it. |
 | **Request Payload** | `{"instance_id":"i-08a978e8520523a44"}` | The instance ID was extracted by the AI Agent and sent in the correct JSON format. This verifies the LLM extraction and Script Tool formatting were accurate. |
 | **Response Time** | Milliseconds | The amount of time AWS took to respond. This helps measure the speed and performance of the remediation workflow. |
-| **Success** | `true` | The remediation request completed successfully. This confirms authentication, headers, credentials, and the AWS Integration Server connection are all functioning correctly. |
+| **Success** | `true` | The remediation request completed successfully. This confirms that authentication, headers, credentials, and the AWS Integration Server connection are all functioning correctly. |
 | **Timestamp** | `2025-11-10 17:24:41` | The exact time the remediation action was executed. This provides a clear timeline of agent activity and remediation events. |
 
 ## Interpretation
 
 When a remediation is triggered, a new log entry captures the status and payload. A 201 status code combined with a success value of true confirms the full automation pipeline is working as expected, from LLM extraction to AWS API execution.
 
-### Step 5: Comparison Analysis 
+### Comparison Analysis 
 
 The AI Agent cuts execution time nearly in half while maintaining identical data logging and compliance workflows.
 The conversational interface encourages faster responses, especially for DevOps engineers handling multiple incidents during Netflix release peaks. The EC2 AI Agent Enhancement extends the WL2 manual remediation system into a conversational framework that blends automation with human control.
