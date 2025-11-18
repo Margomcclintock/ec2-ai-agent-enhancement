@@ -92,7 +92,7 @@ Created a new AI Agent with the following configuration:
 
 ### Step 2: Script Tool Implementation
 
-**Add Script Tool to your AI Agent:**
+**Added Script Tool to the AI Agent:**
 
 - **Tool Configuration:** Created a script tool using the existing RemediationHelper logic adapted for a conversational interface  
 - **Input Schema:** Single input for `instance_id` with LLM-friendly description
@@ -119,7 +119,7 @@ Created a new AI Agent with the following configuration:
 
 1. **Open the AI Agent:** EC2 Remediation Assistant  
 2. **Go to Tools tab:** Add the script tool for EC2 remediation  
-3. **Configure tool parameters:** Ensure the tool accepts instance\_id input and provides human-readable responses  
+3. **Configure tool parameters:** Ensured the tool accepts instance\_id input and provides human-readable responses  
 4. **Test tool integration:** Verify the agent can successfully call your script tool
 <img width="839" height="417" alt="image" src="https://github.com/user-attachments/assets/4c43a3b9-6ca1-418e-a46e-59a0de66f24f" />
 
@@ -130,7 +130,7 @@ Created a new AI Agent with the following configuration:
 
 **Conversational Testing:**
 
-Test these scenarios in AI Agent Studio:
+Tested these scenarios in AI Agent Studio:
 
 1. **Direct Instance ID Request:** "Restart instance i-09ae69f1cb71f622e"
    <img width="932" height="401" alt="image" src="https://github.com/user-attachments/assets/a88cac96-0d40-4607-85bb-48fbe33c5eda" />
@@ -139,40 +139,19 @@ Test these scenarios in AI Agent Studio:
 2. **Incident-Based Request:** "Help me solve incident INC0010021"
 <img width="944" height="341" alt="image" src="https://github.com/user-attachments/assets/ff71009b-fe97-46ec-8a42-97dd0459c0a6" />
 
-option2: <img width="951" height="338" alt="image" src="https://github.com/user-attachments/assets/d6980dbe-96af-4257-ad2a-9045fd411cf3" />
-<img width="951" height="302" alt="image" src="https://github.com/user-attachments/assets/0630a70b-1718-4d2c-8d16-2cf102970028" />
-<img width="947" height="323" alt="image" src="https://github.com/user-attachments/assets/b3af8998-4548-400d-b397-2cb4ad4abc05" />
-
-
-3. **Invalid Input Handling:** Test with malformed instance IDs
+ **Permission Flow:** Verify human approval requirements
 <img width="959" height="365" alt="image" src="https://github.com/user-attachments/assets/1e803225-7450-46c8-a690-0afaa2c35a41" />
 <img width="953" height="310" alt="image" src="https://github.com/user-attachments/assets/79183e57-5610-4a6b-926c-9ec300bb2fb0" />
 
 
  
-6. **Permission Flow:** Verify human approval requirements
 
-**Integration Verification:**
 
-- Confirm AI Agent creates entries in the same Remediation Log table as the manual system
+## Integration Verification
+
  <img width="959" height="193" alt="image" src="https://github.com/user-attachments/assets/742ee867-1dea-41b1-9bb2-7d2578d41710" />
-
-Integration Consistency Validation: Manual and AI Agent-generated remediation logs with identical payloads and structure.
-
-All match, so the integration consistency is confirmed.
-| Field                | Manual                        | AI Agent           | Match? |
-| -------------------- | ----------------------------- | ------------------ | ------ |
-| **EC2 Instance**     | same sys_id                   | same sys_id        | ✅      |
-| **Request Payload**  | identical JSON                | identical JSON     | ✅      |
-| **HTTP Status Code** | 201                               | 201                | ✅      |
-| **Response Time**    | within similar range          | similar range      | ✅      |
-| **Success**          | true                          | true               | ✅      |
-| **Timestamp**        | slightly different (run time) | slightly different | ✅      |
-
----
-# Remediation Log Details
-
-The Remediation Logs table captures each remediation request executed by the AI Agent. The chart below explains what each field represents and how to interpret the results.
+ 
+The Remediation Logs table captures each remediation request executed by the AI Agent. The  Manual and AI Agent-generated remediation logs with identical payloads and structure. The chart below explains what each field represents and how to interpret the results.
 
 | Field | What It Shows | What It Means |
 |-------|---------------|----------------|
@@ -186,238 +165,13 @@ The Remediation Logs table captures each remediation request executed by the AI 
 ## Interpretation
 
 When a remediation is triggered, a new log entry captures the status and payload. A 201 status code combined with a success value of true confirms the full automation pipeline is working as expected, from LLM extraction to AWS API execution.
-                                                                   |
----
-- Verify identical API calls to AWS Integration Server  
-- Test both manual UI Action and AI Agent on same instances
 
-### Step 5: System Analysis and Documentation
+### Step 5: Comparison Analysis 
 
-**Script Comparison Analysis:**
+The AI Agent cuts execution time nearly in half while maintaining identical data logging and compliance workflows.
+The conversational interface encourages faster responses, especially for DevOps engineers handling multiple incidents during Netflix release peaks. The EC2 AI Agent Enhancement extends the WL2 manual remediation system into a conversational framework that blends automation with human control.
+It keeps all backend APIs, logging, and security mechanisms intact while improving efficiency, speed, and user experience. The AI Agent remediation is recommended for peak load hours and incident triage scenarios, while the manual UI Action remains best for single, direct record fixes.
 
-Compare your manual system's `EC2RemediationHelper.js` with the AI Agent's script tool logic:
-
-- Input method differences (sys\_id vs instance\_id)  
-- Lookup direction changes (direct get vs query by instance\_id)  
-- Return format adaptations (JSON string vs object)  
-- Error handling variations  
-- When each approach is most appropriate
----
-#### **A. Efficiency Comparison **
-| Criteria                         | Manual WL2 Remediation                  | AI Agent Remediation          | Improvement          |
-| -------------------------------- | --------------------------------------- | ----------------------------- | -------------------- |
-| **Action Steps per Remediation** | 5–6 (clicks + form load)                | 2 (chat + approval)           | ~65 % fewer steps    |
-| **Average Execution Time**       | 90 seconds                              | 40 seconds                    | ~55 % faster         |
-| **Context Switches**             | High (UI form + Integration Server log) | Low (chat window only)        | Reduced distraction  |
-| **Error Transparency**           | Limited UI alerts                       | Clear conversational feedback | Higher clarity       |
-| **Logging Consistency**          | ✔ Same table                            | ✔ Same table                  | Maintained integrity |
-
-Conclusion: The AI Agent cuts execution time nearly in half while maintaining identical data logging and compliance workflows.
----
-#### **B. Usability & Workflow Adoption **
-| Metric                  | Manual System     | AI Agent                               |
-| ----------------------- | ----------------- | -------------------------------------- |
-| **User Interface**      | Form-based        | Conversational                         |
-| **Learning Curve**      | Moderate          | Low                                    |
-| **Human Approval Flow** | Manual click      | Chat-based “Yes/No”                    |
-| **Accessibility**       | Desktop only      | Works in chat or mobile                |
-| **Best Use Case**       | Single record fix | Multi-incident triage during peak load |
-
-Conclusion: The conversational interface encourages faster responses, especially for DevOps engineers handling multiple incidents during Netflix release peaks.
----
-
-#### **C. Architecture Comparison Chart **
-
-| Layer               | Manual WL2 Flow         | AI Agent Enhancement                     |
-| ------------------- | ----------------------- | ---------------------------------------- |
-| **Input Source**    | UI Action on EC2 record | AI conversation message                  |
-| **Identifier Used** | `sys_id`                | `instance_id`                            |
-| **Record Lookup**   | `gr.get(sys_id)`        | `gr.addQuery('instance_id', instanceId)` |
-| **Execution Logic** | RemediationHelper.js    | Script Tool → RemediationHelper.js       |
-| **Response Format** | Object or UI message    | JSON string for LLM                      |
-| **Logging**         | Remediation Log table   | Same Remediation Log table               |
-
----
-#### **D.Architectural Diagram (Simplified) **
-flowchart LR
-A[AWS EC2] -->|Monitoring Alert| B[AWS Integration Server]
-B --> C[ServiceNow EC2 Table]
-C -->|Manual UI Action| D[RemediationHelper Script]
-C -->|AI Conversation| E[EC2 Remediation Script Tool]
-E --> D
-D --> F[Remediation Log Table]
-F --> G[Success/Failure Response]
----
-#### **E. Summary Insights **
-| Key Dimension       | Observation                             | Outcome                              |
-| ------------------- | --------------------------------------- | ------------------------------------ |
-| **Speed**           | Fewer steps and quicker execution       | Faster incident resolution           |
-| **Accuracy**        | Identical Remediation Log entries       | Consistent auditing                  |
-| **Scalability**     | AI Agent can process multiple incidents | Higher throughput during peak events |
-| **Maintainability** | Reuses RemediationHelper logic          | Low technical debt                   |
-| **User Experience** | Conversational approval flow            | Improved engagement                  |
-
-
----
-#### ** Overall Conclusion**F. Overall Conclusion
-
-The EC2 AI Agent Enhancement extends the WL2 manual remediation system into a conversational framework that blends automation with human control.
-It keeps all backend APIs, logging, and security mechanisms intact while significantly improving efficiency, speed, and user experience.
-The AI Agent remediation is now recommended for peak load hours and incident triage scenarios, while the manual UI Action remains best for single, direct record fixes.
-
-## Testing and Validation
-
-### DevOps User Testing
-
-1. **AI Agent Conversation Flow:**  
-     
-   - DevOps engineer: "Help me with incident INC0010021"  
-   - Agent reads incident, identifies instance ID, requests approval  
-   - Engineer approves, agent executes remediation  
-   - Same logging and API integration as manual system
-<img width="944" height="341" alt="image" src="https://github.com/user-attachments/assets/ff71009b-fe97-46ec-8a42-97dd0459c0a6" />
-   <img width="959" height="365" alt="image" src="https://github.com/user-attachments/assets/1e803225-7450-46c8-a690-0afaa2c35a41" />
-<img width="953" height="310" alt="image" src="https://github.com/user-attachments/assets/79183e57-5610-4a6b-926c-9ec300bb2fb0" />
-
-
-2. **Comparative Testing:**  
-     
-   - Use manual UI Action on one failed instance  
-   - Use AI Agent conversation on another failed instance  
-   - Verify identical remediation outcomes and logging
-
-### System Verification
-
-**AI Agent Execution:** Verify agent successfully calls your existing remediation API and creates log entries
-
-**Conversation History:** Review agent conversation logs in AI Agent Studio
-
-**Integration Consistency:** Confirm both manual and AI approaches create identical log entries in Remediation Log table
-
-Both the manual WL2 UI Action and the AI Agent Script Tool write to the same x_wl2_remediation_log table.
-Side-by-side comparison of recent entries confirms identical fields — including EC2 Instance reference, Request Payload structure, HTTP status codes, and success indicators.
-Both approaches also trigger the same AWS Integration Server connection (AWS_Remediation_Alias), verified through REST Message Logs.
-This confirms architectural consistency and ensures unified audit trails regardless of remediation path.
-
-## Deliverables
-
-### Update Set Requirements
-
-**Complete all implementation work before creating your update set.**
-
-Your update set must contain these working components:
-
-**Data Layer Components:**
-
-- Record from EC2 Instance table
-
-**AI Agent Enhancement Components:**
-
-- AI Agent definition: "EC2 Remediation Assistant" (Table: `sn_aia_agent`)  
-- Script Tool with conversational remediation logic (Table: `sn_aia_agent_tool_m2m`)  
-- Execution plan and associated tasks (Tables: `sn_aia_execution_plan` and related task records)
-
-**API Integration Components:**
-
-- Connection & Credential Alias  
-- Connection record  
-- Credentials (Basic Auth Type)
-
-**Required Update Set Components Collection:**
-
-**Step 1: Activate Your Update Set** Before testing your AI Agent, ensure your update set is active to capture all components.
-
-**Step 2: Collect AI Agent Components**
-
-**Finding and Adding AI Agent Definition:**
-
-1. Navigate to **System Definition \> Tables**  
-2. Search for table name: `sn_aia_agent`  
-3. Click on the table name to open the list view  
-4. Find your agent record: "EC2 Remediation Assistant"  
-5. Right-click on your agent record \> **Add to Update Set**
-
-**Finding and Adding Agent Tool Relationships:**
-
-1. Navigate to **System Definition \> Tables**  
-2. Search for table name: `sn_aia_agent_tool_m2m`  
-3. Click on the table name to open the list view  
-4. Filter by your agent's name or sys\_id to find the relationship records  
-5. Select all agent-tool relationship records for your agent  
-6. Right-click \> **Add to Update Set**
-
-**Finding and Adding Execution Plans:**
-
-1. Navigate to **System Definition \> Tables**  
-2. In the **Name** field, search for: `execution plan`  
-3. Look for the table `sn_aia_execution_plan` in the results  
-4. Click on the table name to open the list view  
-5. Look in the **Objective** column for plans related to EC2 remediation  
-6. Identify your execution plan(s) by objective content (should mention EC2 instances or remediation)  
-7. Right-click on your execution plan record(s) \> **Add to Update Set**
-
-**Finding and Adding Execution Plan Tasks (Critical Step):**
-
-1. From the execution plan list view, click on your execution plan record to open it  
-2. In the execution plan form, find the **State** field  
-3. Click on the **'Completed'** value in the State field (this is a clickable link)  
-4. This opens a list view showing all tasks associated with your execution plan  
-5. Use **Ctrl+A** (Windows) or **Cmd+A** (Mac) to **select all tasks**  
-6. Right-click on the selected tasks \> **Add to Update Set**
-
-**Alternative Method for Finding Tasks:**
-
-1. Navigate to **System Definition \> Tables**  
-2. Search for execution plan task tables (may vary, look for tables starting with `sn_aia` and containing "task")  
-3. Filter by your execution plan's sys\_id  
-4. Select all related task records and add to update set
-
-**File name:** `ec2-ai-agent-enhancement.xml`
-
-### README.md Content Requirements
-
-**Required sections (in this order):**
-
-*Use screenshots to augment your documentation*
-
-- **System Overview:** Description of the enhanced EC2 remediation system with both manual and AI Agent capabilities  
-- **Implementation Steps:** Key configuration decisions for AI Agent integration with existing manual system  
-- **Architecture Diagram:** Visual representation showing both manual UI and conversational workflows  
-- **Optimization:** Comparative analysis of manual vs AI Agent approaches \- when to use each method, efficiency differences, and architectural trade-offs  
-- **DevOps Usage:** Instructions for Netflix DevOps engineers on using both manual remediation and AI Agent conversation for different scenarios
-
-### Architecture Diagram Requirements
-
-Create an enhanced system flow diagram showing:
-
-- Existing manual remediation workflow (WL2 system)  
-- New AI Agent conversational interface  
-- How both approaches utilize the same AWS Integration Server API  
-- Decision points for when DevOps engineers should use manual vs conversational remediation
-
-Use Draw.io and save as `Diagram.png`
-
-## Submission Requirements
-
-1. Test your enhanced system thoroughly, demonstrating both manual and AI Agent remediation capabilities  
-2. Create your update set with all required AI Agent components and evidence records  
-3. Complete comprehensive script comparison analysis in your README  
-4. Upload your GitHub repository with complete documentation and enhanced architecture diagram  
-5. Submit your repository URL
-
-**Critical Success Factors:**
-
-- AI Agent must successfully read incident descriptions and identify instance IDs  
-- Human approval workflow must function correctly before remediation execution  
-- Both manual and AI Agent approaches must create identical remediation log entries  
-- Script comparison analysis must demonstrate understanding of architectural differences  
-- Documentation must clearly explain when to use manual vs conversational remediation approaches
-
-
-Additional Testing Verificiation :
-<img width="959" height="365" alt="image" src="https://github.com/user-attachments/assets/7cd752c8-b6bb-4973-8445-f2becae0ec1a" />
-<img width="943" height="365" alt="image" src="https://github.com/user-attachments/assets/b6464f9d-ac61-4284-8867-319e1e92cd38" />
-<img width="951" height="365" alt="image" src="https://github.com/user-attachments/assets/966a1903-6047-4e77-94f2-c06c78fc4fa2" />
 
 
 
